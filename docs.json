@@ -116,7 +116,7 @@
           {
             "group": "Plugin Development",
             "pages": [
-              "plugins/dev/plugin-structure",
+              "pages/plugins/dev/plugin-structure",
               "plugins/dev/versioning",
               "plugins/dev/compatibility",
               "plugins/dev/distribution"
@@ -125,11 +125,11 @@
           {
             "group": "Dynamic Gameplay Camera",
             "pages": [
-              "plugins/dynamic-gameplay-camera/index",
-              "plugins/dynamic-gameplay-camera/architecture",
-              "plugins/dynamic-gameplay-camera/data-assets",
-              "plugins/dynamic-gameplay-camera/multiplayer",
-              "plugins/dynamic-gameplay-camera/faq"
+              "pages/plugins/dynamic-gameplay-camera/index",
+              "pages/plugins/dynamic-gameplay-camera/architecture",
+              "pages/plugins/dynamic-gameplay-camera/data-assets",
+              "pages/plugins/dynamic-gameplay-camera/multiplayer",
+              "pages/plugins/dynamic-gameplay-camera/faq"
             ]
           }
         ]
@@ -142,22 +142,22 @@
           {
             "group": "Design Decisions",
             "pages": [
-              "knowledge/design/architecture-choices",
-              "knowledge/design/why-not-blueprints-only"
+              "pages/knowledge/design/architecture-choices",
+              "pages/knowledge/design/why-not-blueprints-only"
             ]
           },
           {
             "group": "Anti-Patterns",
             "pages": [
-              "knowledge/anti-patterns/common-mistakes",
-              "knowledge/anti-patterns/multiplayer-errors"
+              "pages/knowledge/anti-patterns/common-mistakes",
+              "pages/knowledge/anti-patterns/multiplayer-errors"
             ]
           },
           {
             "group": "Reference",
             "pages": [
-              "knowledge/reference/glossary",
-              "knowledge/reference/faq"
+              "pages/knowledge/reference/glossary",
+              "pages/knowledge/reference/faq"
             ]
           }
         ]
