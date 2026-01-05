@@ -1,97 +1,146 @@
 ---
-title: Welcome
-description: Professional Unreal Engine documentation focused on C++ architecture, multiplayer systems, and production-ready gameplay engineering.
+title: "Welcome"
 ---
 
-# BlueEdge Documentation
+Here you'll find practical guides and references for **Unreal Engine development in C++**, with a focus on **gameplay systems**, **multiplayer architecture**, and **engine-level features**.
 
-Welcome to **BlueEdge Docs**, a technical documentation hub focused on **Unreal Engine C++ development**, **multiplayer architecture**, and **scalable gameplay systems**.
+The goal of this site is to help developers **write clean, scalable, and maintainable C++ code**, understand **core engine systems**, and avoid **common pitfalls in multiplayer and gameplay programming**.
 
-This documentation is written from a **production-oriented perspective**.  
-The goal is not to explain Unreal basics, but to document **how to design, structure, and ship robust systems** using Unreal Engine.
-
----
-
-## What this documentation is about
-
-BlueEdge Docs covers topics such as:
-
-- **C++ architecture in Unreal Engine**
-- **Gameplay framework design**
-- **Multiplayer & networking (authority, replication, prediction)**
-- **Performance & optimization**
-- **Plugin development & reusable systems**
-
-All content is written with **real-world constraints** in mind:
-performance, maintainability, scalability, and multiplayer safety.
+At the end of each page, you'll find "Previous" and "Next" buttons to quickly move through the documentation.
 
 ---
 
-## Target audience
+## Get started
 
-This documentation is intended for:
-
-- Unreal Engine developers working in **C++**
-- Gameplay / Engine Programmers
-- Developers building **multiplayer games**
-- Teams looking for **clean architecture and best practices**
-- Developers shipping plugins or reusable systems
-
-If you are looking for beginner tutorials or Blueprint-only workflows, this documentation may not be a good fit.
+<Card
+  title="C++ Architecture Overview"
+  icon="code"
+  href="/pages/core/architecture/overview"
+  horizontal
+>
+  Learn how projects are structured, how modules and subsystems interact, and how to design scalable Unreal Engine C++ architectures.
+</Card>
 
 ---
 
-## How to use this documentation
+## Core domains
 
-The documentation is organized into several sections:
+<Columns cols={2}>
+  <Card
+    title="Gameplay Framework"
+    icon="frame"
+    href="/pages/core/gameplay/actors-vs-components"
+  >
+    Actors, components, state machines, and gameplay flow designed for extensibility and multiplayer safety.
+  </Card>
 
-### Core Guides
-Fundamental concepts related to C++ architecture, gameplay framework design, performance, and debugging.
+  <Card
+    title="Performance & Optimization"
+    icon="microchip"
+    href="/pages/core/performance/tick-management"
+  >
+    Tick management, memory considerations, object lifetime, and common Unreal Engine bottlenecks.
+  </Card>
 
-### Multiplayer
-In-depth coverage of Unreal’s networking model, replication, prediction, and common multiplayer pitfalls.
+  <Card
+    title="Debugging & Tooling"
+    icon="bug"
+    href="/pages/core/debugging/logging"
+  >
+    Logging, gameplay debugger, profiling tools, and editor-side workflows.
+  </Card>
 
-### Plugins
-Technical documentation for shipped plugins, including architecture, data flow, and multiplayer compatibility.
+  <Card
+    title="Unreal Engine Systems"
+    icon="gear"
+    href="/pages/systems/ai/ai-controller"
+  >
+    Camera systems, AI, input handling, and engine-level gameplay integrations.
+  </Card>
+</Columns>
 
-### Base Knowledge
-Design decisions, anti-patterns, and reference material based on real development experience.
+---
+
+## Multiplayer focus
+
+<Card
+  title="Multiplayer & Networking"
+  icon="network-wired"
+  href="/pages/multiplayer/fundamentals/authority-model"
+  horizontal
+>
+  Authority model, replication, prediction, and multiplayer architecture designed to avoid desync and security issues.
+</Card>
+
+---
+
+## Plugins & reusable systems
+
+<Columns cols={2}>
+  <Card
+    title="Plugin Development"
+    icon="code"
+    href="/pages/plugins/dev/plugin-structure"
+  >
+    Best practices for structuring, versioning, and distributing Unreal Engine plugins.
+  </Card>
+
+  <Card
+    title="Dynamic Gameplay Camera"
+    icon="video"
+    href="/pages/plugins/dynamic-gameplay-camera/index"
+  >
+    A data-driven, multiplayer-compatible camera system built for action and combat games.
+  </Card>
+</Columns>
 
 ---
 
 ## Design philosophy
 
-The content follows a few key principles:
+<Columns cols={2}>
+  <Card
+    title="C++ First"
+    icon="code"
+  >
+    Blueprints are tools, not architectural foundations.
+  </Card>
 
-- **C++ first** – Blueprints are tools, not foundations
-- **Explicit architecture** over implicit engine magic
-- **Multiplayer-safe by design**
-- **Systems over features**
-- **Clarity over convenience**
+  <Card
+    title="Multiplayer by Design"
+    icon="shield"
+  >
+    Authority, replication, and security are considered from day one.
+  </Card>
 
-Every guide aims to answer not only *how* something works, but *why* it is designed this way.
+  <Card
+    title="Systems over Features"
+    icon="cubes"
+  >
+    Reusable, extensible systems over one-off implementations.
+  </Card>
+
+  <Card
+    title="Explicit Architecture"
+    icon="book"
+  >
+    Clear ownership, data flow, and responsibility boundaries.
+  </Card>
+</Columns>
 
 ---
 
-## About BlueEdge
+## Reference & knowledge base
 
-BlueEdge is focused on building **reliable Unreal Engine systems** and **production-ready plugins**, with a strong emphasis on multiplayer gameplay and technical architecture.
-
-You can find released plugins and tools on the Fab marketplace.
-
----
-
-## Getting started
-
-If this is your first visit, a good starting point is:
-
-- **Core Guides → C++ Architecture → Overview**
-- **Multiplayer → Networking Fundamentals**
-- **Plugins → Dynamic Gameplay Camera → Overview**
-
-Each section is designed to be read independently.
+<Card
+  title="Knowledge Base"
+  icon="book"
+  href="/pages/knowledge/reference/glossary"
+  horizontal
+>
+  Design decisions, anti-patterns, FAQs, and technical references based on real Unreal Engine development experience.
+</Card>
 
 ---
 
-If you find issues, inconsistencies, or have suggestions, feel free to reach out via GitHub or LinkedIn.
-
+If you encounter issues, inconsistencies, or have suggestions, feel free to reach out via GitHub or LinkedIn.
