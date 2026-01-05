@@ -4,14 +4,15 @@
   "name": "Mint Starter Kit",
   "colors": {
     "primary": "#16A34A",
-    "light": "#07C983",
+    "light": "#62DCFF",
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "dropdowns": [
       {
-        "tab": "Guides",
+        "dropdown": "Guides",
+        "icon": "book",
         "groups": [
           {
             "group": "Getting started",
@@ -48,7 +49,8 @@
         ]
       },
       {
-        "tab": "API reference",
+        "dropdown": "API reference",
+        "icon": "code",
         "groups": [
           {
             "group": "API documentation",
