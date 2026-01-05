@@ -1,94 +1,185 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "willow",
+  "name": "BlueEdge Docs",
   "colors": {
     "primary": "#16A34A",
     "light": "#62DCFF",
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
+
   "navigation": {
-    "dropdowns": [
+    "tabs": [
       {
-        "dropdown": "Guides",
-        "icon": "book",
+        "tab": "Home",
+        "icon": "House",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Home",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "pages/home/welcome"
             ]
           }
         ]
       },
+      
       {
-        "dropdown": "API reference",
-        "icon": "code",
+        "tab": "Core Guides",
+        "icon": "layers",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "C++ Architecture",
             "pages": [
-              "api-reference/introduction"
+              "pages/core/architecture/overview",
+              "pages/core/architecture/project-structure",
+              "pages/core/architecture/modules",
+              "pages/core/architecture/plugins",
+              "pages/core/architecture/subsystems"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Gameplay Framework",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "pages/core/gameplay/actors-vs-components",
+              "pages/core/gameplay/gameplay-flow",
+              "pages/core/gameplay/state-machines",
+              "pages/core/gameplay/statetree"
+            ]
+          },
+          {
+            "group": "Performance & Optimization",
+            "pages": [
+              "pages/core/performance/tick-management",
+              "pages/core/performance/memory",
+              "pages/core/performance/object-lifecycle",
+              "pages/core/performance/common-bottlenecks"
+            ]
+          },
+          {
+            "group": "Debugging & Tooling",
+            "pages": [
+              "pages/core/debugging/logging",
+              "pages/core/debugging/gameplay-debugger",
+              "pages/core/debugging/profiling",
+              "pages/core/debugging/editor-tools"
+            ]
+          }
+        ]
+      },
+
+      {
+        "tab": "Multiplayer",
+        "icon": "network",
+        "groups": [
+          {
+            "group": "Networking Fundamentals",
+            "pages": [
+              "pages/multiplayer/fundamentals/authority-model",
+              "pages/multiplayer/fundamentals/roles-ownership",
+              "pages/multiplayer/fundamentals/replication-overview"
+            ]
+          },
+          {
+            "group": "Replication",
+            "pages": [
+              "pages/multiplayer/replication/properties",
+              "pages/multiplayer/replication/rpcs",
+              "pages/multiplayer/replication/fast-array",
+              "pages/multiplayer/replication/components"
+            ]
+          },
+          {
+            "group": "Prediction & Responsiveness",
+            "pages": [
+              "pages/multiplayer/prediction/client-prediction",
+              "pages/multiplayer/prediction/reconciliation",
+              "pages/multiplayer/prediction/movement"
+            ]
+          },
+          {
+            "group": "Architecture & Pitfalls",
+            "pages": [
+              "pages/multiplayer/architecture/server-vs-client-logic",
+              "pages/multiplayer/architecture/security",
+              "pages/multiplayer/pitfalls/desync",
+              "pages/multiplayer/pitfalls/bandwidth"
+            ]
+          }
+        ]
+      },
+
+      {
+        "tab": "Plugins",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Plugin Development",
+            "pages": [
+              "plugins/dev/plugin-structure",
+              "plugins/dev/versioning",
+              "plugins/dev/compatibility",
+              "plugins/dev/distribution"
+            ]
+          },
+          {
+            "group": "Dynamic Gameplay Camera",
+            "pages": [
+              "plugins/dynamic-gameplay-camera/index",
+              "plugins/dynamic-gameplay-camera/architecture",
+              "plugins/dynamic-gameplay-camera/data-assets",
+              "plugins/dynamic-gameplay-camera/multiplayer",
+              "plugins/dynamic-gameplay-camera/faq"
+            ]
+          }
+        ]
+      },
+
+      {
+        "tab": "Base Knowledge",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Design Decisions",
+            "pages": [
+              "knowledge/design/architecture-choices",
+              "knowledge/design/why-not-blueprints-only"
+            ]
+          },
+          {
+            "group": "Anti-Patterns",
+            "pages": [
+              "knowledge/anti-patterns/common-mistakes",
+              "knowledge/anti-patterns/multiplayer-errors"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "knowledge/reference/glossary",
+              "knowledge/reference/faq"
             ]
           }
         ]
       }
     ],
+
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
+          "anchor": "Fab Profile",
           "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "icon": "store"
         }
       ]
     }
   },
+
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
+
   "navbar": {
     "links": [
       {
@@ -102,18 +193,20 @@
       "href": "https://dashboard.mintlify.com"
     }
   },
+
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
+
   "footer": {
     "socials": {
       "x": "https://x.com/mintlify",
