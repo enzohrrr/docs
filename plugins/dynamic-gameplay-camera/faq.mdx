@@ -1,0 +1,14 @@
+---
+title: "Faq"
+---
+
+<Accordion title="Is the plugin compatible with multiplayer projects?">
+  Yes, **Dynamic Gameplay Camera** is fully compatible with multiplayer projects.
+
+  The camera is intentionally designed to run **client-side only**, as camera logic should never be replicated or controlled by the server.
+
+  Since the camera is not directly attached to the player character, it must be **spawned locally on the client** once the controller is assigned.  
+  This is typically handled using the `ReceiveControllerChanged` event.
+
+  The full setup process and recommended implementation patterns are explained step by step in the documentation.
+</Accordion>
