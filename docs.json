@@ -126,10 +126,10 @@
           {
             "group": "Dynamic Gameplay Camera",
             "pages": [
-              "plugins/dynamic-gameplay-camera/index",
-              "plugins/dynamic-gameplay-camera/architecture",
-              "plugins/dynamic-gameplay-camera/data-assets",
-              "plugins/dynamic-gameplay-camera/multiplayer",
+              "plugins/dynamic-gameplay-camera/overview",
+              "plugins/dynamic-gameplay-camera/installation",
+              "plugins/dynamic-gameplay-camera/setup",
+              "plugins/dynamic-gameplay-camera/advices",
               "plugins/dynamic-gameplay-camera/faq"
             ]
           }
