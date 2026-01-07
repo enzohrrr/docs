@@ -171,6 +171,11 @@
           "anchor": "Fab Profile",
           "href": "https://www.fab.com/sellers/BlueEdge",
           "icon": "store"
+        },
+        {
+          "anchor": "Ko-fi",
+          "href": "https://ko-fi.com/enzoherrera",
+          "icon": "mug"
         }
       ]
     }
