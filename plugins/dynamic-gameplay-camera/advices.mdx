@@ -1,3 +1,21 @@
 ---
 title: "Advices"
 ---
+
+## Avoid unnecessary camera collisions
+
+Many third-person games suffer from unstable and frustrating cameras in tight environments.
+One very common cause is **blocking the camera on too many environment meshes**.
+
+By default, Unreal Engine meshes often block the `Camera` collision channel. This is especially noticeable in many Unreal-based souls-like games, where dense levels and narrow spaces cause the camera to constantly collide with small props and decorative geometry.
+
+The result is frequent camera jumps, forced zoom-ins, and poor visibility during gameplay.
+
+### Recommended approach
+
+- Disable camera collision on meshes that do not strictly need it
+  (`Collision → Camera → Ignore`)
+- Keep camera blocking only for large structural elements (terrain, major walls, buildings)
+- Use **camera-fade materials** on obstructing objects instead of physical camera blocking (as described in this documentation)
+
+This simple setup greatly improves camera stability and overall player experience, especially in confined spaces.
