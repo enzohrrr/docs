@@ -1,0 +1,135 @@
+---
+title: "Setup"
+---
+
+<Steps>
+
+    <Step title="Create the camera Actor">
+        In the **Content Drawer**, right-click and select **Blueprint Class**, then use the search bar to find and select `DGC_CameraActor` as the parent class.
+    </Step>
+
+    <Step title="Spawn the camera">
+        Open your **Player Character** and add the following logic.
+        In the **Spawn Actor** node, assign your previously created `DGC_CameraActor` Blueprint, then promote the spawned camera reference to a variable for later use.
+
+        You can call it for exemple: **CameraActor**
+
+        <Frame>
+            <img src="/assets/images/dynamic-gameplay-camera/receive-controller.png" style={{ maxWidth: "100%", height: "auto" }}/>
+        </Frame>
+
+        <Card title="Open the code on BlueprintUE"
+            icon="share-nodes"
+            href="https://blueprintue.com/blueprint/a8bttf1v/"
+            horizontal
+        >
+        Click here to view and copy the complete Blueprint implementation.
+        </Card>
+
+    </Step>
+
+    <Step title="Add camera inputs">
+        Instead of using `Add Yaw Input` and `Add Pitch Input` directly on the character (as done in the default Third Person template), forward the rotation input to your `DGC_CameraActor`.
+
+        Use the stored camera reference and apply the yaw and pitch values on the camera instance itself.
+
+        Since the camera actor may not be initialized yet, or could be spawned or destroyed dynamically during gameplay, always protect this logic with an **Is Valid** check to avoid runtime errors and invalid references.
+
+        <Frame>
+            <img src="/assets/images/dynamic-gameplay-camera/camera-input.png"/>
+        </Frame>
+
+    </Step>
+
+        <Step title="Bind the targeting input">
+        The plugin exposes two functions on the `DGC_CameraActor`: **Start Targeting** and **Stop Targeting**.
+
+        Using your camera actor reference, simply call these functions when your targeting input action is triggered.
+
+        In this example (inspired by *Devil May Cry*–style targeting), **Start Targeting** is called on **Triggered**, while **Stop Targeting** is called on both **Canceled** and **Completed**.
+        This means the player must hold the button to stay in targeting mode, and targeting stops immediately when the button is released.
+
+        This approach also allows the system to automatically switch targets if the current one becomes invalid (for example, if it is destroyed or despawned).
+
+        <Frame>
+            <img src="/plugins/dynamic-gameplay-camera/assets/targeting-input.png"/>
+        </Frame>
+
+    </Step>
+
+    <Step title="Enable targeting on enemies">
+        To allow the camera system to target an actor, the `DGC_TargetingInterface` must be implemented on its class.
+
+        It is recommended to add this interface to the base class of all your enemies, or to any parent class of actors that you want to be targetable.
+
+        To do this, open the actor Blueprint, go to **Class Settings**, then in the **Interfaces** category, click **Add** next to **Implemented Interfaces** and select `DGC_TargetingInterface`.
+
+        <Frame>
+            <img src="/plugins/dynamic-gameplay-camera/assets/targeting-interface.png"/>
+        </Frame>
+
+    </Step>
+
+        <Step title="Bind the targeting input">
+        The plugin exposes two functions on the `DGC_CameraActor`: **Start Targeting** and **Stop Targeting**.
+
+        Using your camera actor reference, simply call these functions when your targeting input action is triggered.
+
+        In this example (inspired by *Devil May Cry*–style targeting), **Start Targeting** is called on **Triggered**, while **Stop Targeting** is called on both **Canceled** and **Completed**.
+        This means the player must hold the button to stay in targeting mode, and targeting stops immediately when the button is released.
+
+        This approach also allows the system to automatically switch targets if the current one becomes invalid (for example, if it is destroyed or despawned).
+
+        <Frame>
+            <img src="/assets/images/dynamic-gameplay-camera/targeting-input.png"/>
+        </Frame>
+
+    </Step>
+
+    <Step title="Enable targeting on enemies">
+        To allow the camera system to target an actor, the `DGC_TargetingInterface` must be implemented on its class.
+
+        It is recommended to add this interface to the base class of all your enemies, or to any parent class of actors that you want to be targetable.
+
+        To do this, open the actor Blueprint, go to **Class Settings**, then in the **Interfaces** category, click **Add** next to **Implemented Interfaces** and select `DGC_TargetingInterface`.
+
+        <Frame>
+            <img src="/assets/images/dynamic-gameplay-camera/targeting-interface.png"/>
+        </Frame>
+
+    </Step>
+
+    <Step title="Add a targeting widget component">
+      To display visual feedback when an actor is targeted, add a **Widget** component to the actor that can be targeted.
+    
+      Open the actor Blueprint, click **Add Component**, and select **Widget**.  
+      You can name it for example `TargetingWidget`.
+
+      <Frame>
+        <img src="/assets/images/dynamic-gameplay-camera/add-widget.png"/>
+      </Frame>
+    
+      This widget will be used to display UI elements when the actor is targeted, such as a simple lock-on marker (like in *Souls* games) or a health bar (as seen in *Devil May Cry*).
+      
+    </Step>
+
+    <Step title="Provide the targeting widget to the camera system">
+      Thanks to the interface added in the previous step, a new function is now available in the actor Blueprint.
+    
+      You can find it in the **My Blueprint** panel under **Interfaces**.  
+  A new category **Dynamic Gameplay Camera → Targeting Interface** should appear, containing the function `GetTargetingWidgetComponent`.
+  
+      <Frame>
+        <img src="/assets/images/dynamic-gameplay-camera/interface-panel.png"/>
+      </Frame>
+    
+      This function simply needs to return a reference to the **Widget** component you created earlier (for example: `TargetingWidget`).
+  
+      <Frame>
+        <img src="/assets/images/dynamic-gameplay-camera/interface-function.png"/>
+      </Frame>
+    
+      This allows the camera system to know which widget to display when the actor is targeted.
+    </Step>
+
+</Steps>

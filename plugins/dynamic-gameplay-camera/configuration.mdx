@@ -1,0 +1,114 @@
+---
+title: "Configuration"
+---
+
+## Accessing the settings
+
+<Steps>
+
+  <Step title="Open Project Settings">
+    From the editor, go to **Edit → Project Settings**.
+  </Step>
+
+  <Step title="Navigate to the plugin settings">
+    In the left sidebar, search for the **Game** category and then select **Dynamic Gameplay Camera**.
+  </Step>
+
+</Steps>
+
+You will find all global configuration options for the plugin in this panel.
+
+---
+
+## Camera Context
+
+The **Camera Context** defines which camera configurations are used for different gameplay situations.
+
+It references multiple **`DGC_CameraData`** Data Assets:
+
+- **IndoorCameraData**
+- **OutdoorCameraData**
+- **BossFightCameraData**
+
+The assigned context is loaded globally and used by all `DGC_CameraActor` instances.
+
+### Default context
+
+The plugin ships with a ready-to-use camera context:
+
+**`DA_DefaultCameraContext`**
+
+It is located in the plugin content folder and already references preconfigured camera data assets.
+
+By default:
+
+- This context is automatically used
+- No configuration is required to get started
+- All camera features work out of the box
+
+You may keep using this default context or replace it with your own.
+
+---
+
+## Creating custom Data Assets
+
+All camera configurations and contexts are **Data Assets** in Unreal Engine. If you are new to them, here’s a quick guide:
+
+- Right-click in the **Content Browser** → **Miscellaneous → Data Asset**
+- In the class picker, select the appropriate class:
+  - **`DGC_CameraData`** for individual camera configurations
+  - **`DGC_CameraContextData`** for context assets combining multiple camera data
+- Name your asset and save it in a suitable folder in your project
+
+<Frame>
+  <img src="/assets/images/dynamic-gameplay-camera/create-data-asset.png"/>
+</Frame>
+
+---
+
+## Creating a custom camera context
+
+<Steps>
+
+  <Step title="Create camera configuration assets">
+    Create one or more **`DGC_CameraData`** assets.
+
+    Each asset defines a complete camera profile, including positioning, movement interpolation, rotation limits, collision behavior, FOV ranges, targeting parameters, and refocus settings.
+
+    Example naming:
+    - `DA_IndoorCamera`
+    - `DA_OutdoorCamera`
+    - `DA_BossFightCamera`
+  </Step>
+
+  <Step title="Create a camera context asset">
+    Create a Data Asset based on **`DGC_CameraContextData`**.
+
+    Assign the corresponding camera data assets to:
+
+    - **IndoorCameraData**
+    - **OutdoorCameraData**
+    - **BossFightCameraData**
+  </Step>
+
+  <Step title="Assign the context in Project Settings">
+    In **Project Settings → Game → Dynamic Gameplay Camera**, set your `DGC_CameraContextData` asset in:
+
+    **Configuration | Context → Camera Context**
+  </Step>
+
+</Steps>
+
+---
+
+## Debug Settings
+
+The plugin includes built-in debugging features to help monitor and troubleshoot camera behavior during development.
+
+Available options:
+
+- **Enable Debug** – Master switch for all debug features.
+- **Enable Logging** – Outputs camera-related logs to help track state changes and context usage.
+- **Draw Debug Shapes** – Displays visual helpers in the world (collision probes, distances, etc...).
+
+These tools are intended for development and should be disabled in production builds.

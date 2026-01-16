@@ -1,0 +1,40 @@
+---
+title: "Advices"
+---
+
+## Avoid unnecessary camera collisions
+
+Many third-person games suffer from unstable and frustrating cameras in tight environments.
+One very common cause is **blocking the camera on too many environment meshes**.
+
+By default, Unreal Engine meshes often block the `Camera` collision channel. This is especially noticeable in many Unreal-based souls-like games, where dense levels and narrow spaces cause the camera to constantly collide with small props and decorative geometry.
+
+The result is frequent camera jumps, forced zoom-ins, and poor visibility during gameplay.
+
+### Recommended approach
+
+- Disable camera collision on meshes that do not strictly need it
+  (`Collision → Camera → Ignore`)
+- Keep camera blocking only for large structural elements (terrain, major walls, buildings)
+- Use **camera-fade materials** on obstructing objects instead of physical camera blocking (as described in this documentation)
+
+This simple setup greatly improves camera stability and overall player experience, especially in confined spaces.
+
+---
+
+## Use a low near clip plane
+
+A high near clip plane value can cause unexpected visual clipping when the camera gets close to objects, especially if those objects do not use a camera-fade material.
+
+To avoid this:
+
+- Go to **Project Settings**
+- Search for **Near Clip Plane**
+  (or navigate to **Engine → General Settings**)
+- Set the value to a low number, such as `1` (default is `10`)
+
+<Warning>
+After changing the near clip plane value, you must **restart Unreal Engine** for the change to take effect.
+</Warning>
+
+This small adjustment helps prevent distracting visual artifacts and improves overall camera consistency.

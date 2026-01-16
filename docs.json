@@ -1,0 +1,205 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "BlueEdge Docs",
+  "colors": {
+    "primary": "#16A34A",
+    "light": "#62DCFF",
+    "dark": "#15803D"
+  },
+  "favicon": "/favicon.svg",
+
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Home",
+        "icon": "House",
+        "groups": [
+          {
+            "group": "Home",
+            "pages": [
+              "home/welcome",
+              "home/about-me"
+            ]
+          }
+        ]
+      },
+      
+      {
+        "tab": "Core Guides",
+        "icon": "layer-group",
+        "groups": [
+          {
+            "group": "C++ Architecture",
+            "pages": [
+              "core/architecture/overview",
+              "core/architecture/project-structure",
+              "core/architecture/modules",
+              "core/architecture/plugins",
+              "core/architecture/subsystems"
+            ]
+          },
+          {
+            "group": "Gameplay Framework",
+            "pages": [
+              "core/gameplay/actors-vs-components",
+              "core/gameplay/gameplay-flow",
+              "core/gameplay/state-machines",
+              "core/gameplay/statetree"
+            ]
+          },
+          {
+            "group": "Performance & Optimization",
+            "pages": [
+              "core/performance/tick-management",
+              "core/performance/memory",
+              "core/performance/object-lifecycle",
+              "core/performance/common-bottlenecks"
+            ]
+          },
+          {
+            "group": "Debugging & Tooling",
+            "pages": [
+              "core/debugging/logging",
+              "core/debugging/gameplay-debugger",
+              "core/debugging/profiling",
+              "core/debugging/editor-tools"
+            ]
+          }
+        ]
+      },
+
+      {
+        "tab": "Multiplayer",
+        "icon": "network-wired",
+        "groups": [
+          {
+            "group": "Networking Fundamentals",
+            "pages": [
+              "multiplayer/fundamentals/authority-model",
+              "multiplayer/fundamentals/roles-ownership",
+              "multiplayer/fundamentals/replication-overview"
+            ]
+          },
+          {
+            "group": "Replication",
+            "pages": [
+              "multiplayer/replication/properties",
+              "multiplayer/replication/rpcs",
+              "multiplayer/replication/fast-array",
+              "multiplayer/replication/components"
+            ]
+          },
+          {
+            "group": "Prediction & Responsiveness",
+            "pages": [
+              "multiplayer/prediction/client-prediction",
+              "multiplayer/prediction/reconciliation",
+              "multiplayer/prediction/movement"
+            ]
+          },
+          {
+            "group": "Architecture & Pitfalls",
+            "pages": [
+              "multiplayer/architecture/server-vs-client-logic",
+              "multiplayer/architecture/security",
+              "multiplayer/pitfalls/desync",
+              "multiplayer/pitfalls/bandwidth"
+            ]
+          }
+        ]
+      },
+
+      {
+        "tab": "Plugins",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Plugin Development",
+            "pages": [
+              "plugins/dev/plugin-structure",
+              "plugins/dev/versioning",
+              "plugins/dev/compatibility",
+              "plugins/dev/distribution"
+            ]
+          },
+          {
+            "group": "Dynamic Gameplay Camera",
+            "pages": [
+              "plugins/dynamic-gameplay-camera/overview",
+              "plugins/dynamic-gameplay-camera/installation",
+              "plugins/dynamic-gameplay-camera/configuration",
+              "plugins/dynamic-gameplay-camera/setup",
+              "plugins/dynamic-gameplay-camera/advices",
+              "plugins/dynamic-gameplay-camera/faq"
+            ]
+          }
+        ]
+      },
+
+      {
+        "tab": "Knowledge Base",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Design Decisions",
+            "pages": [
+              "knowledge/design/architecture-choices",
+              "knowledge/design/why-not-blueprints-only"
+            ]
+          },
+          {
+            "group": "Anti-Patterns",
+            "pages": [
+              "knowledge/anti-patterns/common-mistakes",
+              "knowledge/anti-patterns/multiplayer-errors"
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "knowledge/reference/glossary",
+              "knowledge/reference/faq"
+            ]
+          }
+        ]
+      }
+    ],
+
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Fab Profile",
+          "href": "https://www.fab.com/sellers/BlueEdge",
+          "icon": "store"
+        },
+        {
+          "anchor": "Ko-fi",
+          "href": "https://ko-fi.com/enzoherrera",
+          "icon": "mug"
+        }
+      ]
+    }
+  },
+
+  "contextual": {
+    "options": [
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
+  },
+
+  "footer": {
+    "socials": {
+      "x": "https://x.com/enzo_hrrr",
+      "github": "https://github.com/enzohrrr",
+      "linkedin": "https://www.linkedin.com/in/enzo-herrera-gp/"
+    }
+  }
+}
